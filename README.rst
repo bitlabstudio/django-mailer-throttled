@@ -1,8 +1,8 @@
 Django Mailer Throttled
 =======================
 
-Addon for `django-mailer <https://github.com/pinax/django-mailer/>`_ allows to
-send throttled emails.
+Addon for `django-mailer <https://github.com/pinax/django-mailer/>`_ which 
+allows to send throttled emails.
 
 Install this as an addon alongside `django-mailer`.
 
@@ -35,10 +35,13 @@ Usage
 =====
 
 Set the ``MAILER_THROTTLE_AMOUNT`` to the number of emails you would like to
-send per run.
+send per run. The default is ``25``.
 
 Don't use the original ``send_mail`` management command any more but the new
 ``send_mail_throttled``.
+
+If you schedule that task via crontab every minute and leave the setting at
+``25``, you would send up to 25 emails every minute.
 
 
 Contribute
