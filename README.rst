@@ -1,10 +1,13 @@
 Django Mailer Throttled
-============
+=======================
 
-Addon for django-mailer that allows to send throttled emails
+Addon for `django-mailer <https://github.com/pinax/django-mailer/>`_ allows to
+send throttled emails.
+
+Install this as an addon alongside `django-mailer`.
 
 Installation
-------------
+============
 
 To get the latest stable release from PyPi
 
@@ -18,49 +21,28 @@ To get the latest commit from GitHub
 
     pip install -e git+git://github.com/bitmazk/django-mailer-throttled.git#egg=mailer_throttled
 
-TODO: Describe further installation steps (edit / remove the examples below):
-
 Add ``mailer_throttled`` to your ``INSTALLED_APPS``
 
 .. code-block:: python
 
     INSTALLED_APPS = (
         ...,
+        'mailer'
         'mailer_throttled',
     )
 
-Add the ``mailer_throttled`` URLs to your ``urls.py``
-
-.. code-block:: python
-
-    urlpatterns = patterns('',
-        ...
-        url(r'^//', include('mailer_throttled.urls')),
-    )
-
-Before your tags/filters are available in your templates, load them by using
-
-.. code-block:: html
-
-	{% load mailer_throttled_tags %}
-
-
-Don't forget to migrate your database
-
-.. code-block:: bash
-
-    ./manage.py migrate mailer_throttled
-
-
 Usage
------
+=====
 
-TODO: Describe usage or point to docs. Also describe available settings and
-templatetags.
+Set the ``MAILER_THROTTLE_AMOUNT`` to the number of emails you would like to
+send per run.
+
+Don't use the original ``send_mail`` management command any more but the new
+``send_mail_throttled``.
 
 
 Contribute
-----------
+==========
 
 If you want to contribute to this project, please perform the following steps
 
