@@ -1,0 +1,9 @@
+include AUTHORS
+include LICENSE
+include DESCRIPTION
+include CHANGELOG.txt
+include README.md
+graft mailer_throttled
+global-exclude *.orig *.pyc *.log *.swp
+prune mailer_throttled/tests/coverage
+prune mailer_throttled/.ropeproject
